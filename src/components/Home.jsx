@@ -44,8 +44,18 @@ class Home extends React.Component {
                                 COL CONTENT
                             </div>
                         */}
-            <h1>Welcome to Strivestaurant</h1>
-            <p>The best pasta dishes you can find on the web!</p>
+            {this.props.newTitle && this.props.newPayoff ? (
+              <div>
+                <h1>Welcome to {this.props.newTitle}</h1>
+                <p>{this.props.newPayoff}</p>
+              </div>
+            ) : (
+              <div>
+                <h1>Welcome to Strivestaurant</h1>
+                <p>The best pasta dishes you can find on the web!</p>
+              </div>
+            )}
+
             <Carousel>
               {
                 // every time you do a .map in react you'll need to
@@ -82,7 +92,9 @@ class Home extends React.Component {
         </Row>
         <Row className="justify-content-center mt-3">
           <Col xs={12} md={8}>
-            {this.state.selectedDish.comments.rating === 6 ? (
+            {this.state.selectedDish.comments.some(
+              (comment) => comment.rating < 5
+            ) ? (
               <ShowForm />
             ) : (
               <Alert variant={"info"}>This dish has a rating of below 5</Alert>

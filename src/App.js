@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div>
       <MyNavBar title="Strivestaurant" />
-      <Home />
+      <Home newTitle="MyStaurant" newPayOff="I am not sure what this means" />
       {/* <Footer/> */}
     </div>
   );
