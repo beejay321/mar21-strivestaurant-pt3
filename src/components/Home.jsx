@@ -44,16 +44,15 @@ class Home extends React.Component {
                                 COL CONTENT
                             </div>
                         */}
-            {this.props.newTitle && this.props.newPayoff ? (
-              <div>
-                <h1>Welcome to {this.props.newTitle}</h1>
-                <p>{this.props.newPayoff}</p>
-              </div>
+            {this.props.newTitle ? (
+              <h1>Welcome to {this.props.newTitle}</h1>
             ) : (
-              <div>
-                <h1>Welcome to Strivestaurant</h1>
-                <p>The best pasta dishes you can find on the web!</p>
-              </div>
+              <h1>Welcome to Strivestaurant</h1>
+            )}
+            {this.props.newPayOff ? (
+              <p>{this.props.newPayOff}</p>
+            ) : (
+              <p>The best pasta dishes you can find on the web!</p>
             )}
 
             <Carousel>
@@ -99,7 +98,7 @@ class Home extends React.Component {
             ) : (
               <Alert variant={"info"}>This dish has a rating of below 5</Alert>
             )}
-            <ShowForm />
+            {/* <ShowForm /> */}
           </Col>
         </Row>
       </Container>

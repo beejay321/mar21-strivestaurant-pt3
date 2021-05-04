@@ -9,7 +9,7 @@ class DishComments extends React.Component {
         <h2>Comments for {this.props.dish.name}</h2>
 
         <ListGroup>
-          {this.props.dish !== this.props.dish ? (
+          {this.props.dish === this.props.dish ? (
             this.props.dish.comments.map((c) => (
               <ListGroup.Item key={c.id}>
                 "{c.comment}" from {c.author}
